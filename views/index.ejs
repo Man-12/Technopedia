@@ -1,0 +1,333 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+  <div class="col-12 col-lg-6">
+    <img
+      src="/img/ok.jpg"
+      width="507"
+      height="510"
+      class="d-block mx-lg-auto img-fluid"
+      loading="lazy"
+      alt="Technopedia - Node.js "
+    />
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <h1 class="display-5 fw-bold mb-3">
+      Huge collection of Trending Technologies
+    </h1>
+    <p class="lead">
+      Explore our huge selection of trending technologies including Programming
+      languages, Web Development, App Development, Backend Technologies,
+      Frontend Technologies and many more...
+    </p>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+      <a
+        href="/explore-latest"
+        class="btn btn-primary btn-dark btn-lg px-4 me-md-2"
+        >Explore latest</a
+      >
+      <a
+        href="/explore-random"
+        class="btn btn-outline-secondary btn-lg px-4 me-md-2"
+        >Show Random</a
+      >
+    </div>
+  </div>
+</div>
+
+<!-- Categories -->
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+  <%if(categories != ''){%> <% categories.forEach(function(category, index){ %>
+
+  <a href="/categories/" class="col text-center category__link">
+    <div class="category__img shadow">
+      <img
+        src="img/<%- category.image %>"
+        alt="<%- category.name %>"
+        loading="lazy"
+      />
+    </div>
+    <div class="pt-1"><%- category.name %></div>
+  </a>
+  <% }) %> <% } else { %>
+  <p>No Items found</p>
+  <% } %>
+
+  <a href="/categories" class="col text-center category__link">
+    <div class="category__img shadow">
+      <img src="img/viewall.jpeg" alt="View All Categories" loading="lazy" />
+    </div>
+    <div class="pt-1">View all</div>
+  </a>
+</div>
+
+<!-- Latest Technologies -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Latest Technologies</h2>
+    <a href="/explore-latest" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <% things.latest.forEach(function(tech, index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!--Programming Languages -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Programming Languages</h2>
+    <a href="/categories/Programming Languages" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <%
+    things.programming_languages.forEach(function(tech, index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!--Web Development -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Web Development</h2>
+    <a href="/categories/Web Development" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <% things.web_development.forEach(function(tech,
+    index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!--App Development -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>App Development</h2>
+    <a href="/categories/App Development" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <% things.app_development.forEach(function(tech,
+    index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!--Game Development -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Game Development</h2>
+    <a href="/categories/Game Development" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <% things.game_development.forEach(function(tech,
+    index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!--Backend Technologies -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Backend Technologies</h2>
+    <a href="/categories/Backend Technologies" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <%
+    things.backend_technologies.forEach(function(tech, index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!--Frontend Technologies -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Frontend Technologies</h2>
+    <a href="/categories/Frontend Technologies" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <%
+    things.frontend_technologies.forEach(function(tech, index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!--Database Design & Development -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Database Design & Development</h2>
+    <a href="/categories/Database Design & Development" class="ms-auto"
+      >View More</a
+    >
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <%
+    things.database_design_development.forEach(function(tech, index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!--Trending Technologies -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Trending Technologies</h2>
+    <a href="/categories/Trending Technologies" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(things != '') {%> <%
+    things.trending_technologies.forEach(function(tech, index){ %>
+    <a href="/tech/<%= tech._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img
+          src="/uploads/<%= tech.image %>"
+          alt="<%= tech.name %>"
+          loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%= tech.name %></div>
+    </a>
+    <% }) %> <% } else { %>
+    <p>No Items found</p>
+    <% } %>
+  </div>
+</section>
+
+<!-- Submit -->
+
+<section class="px-4 py-5 my-5 text-center">
+  <img
+    src="/img/publish-recipe.png"
+    class="d-block mx-auto mb-4 img-fluid"
+    alt="Publish your recipe for FREE today"
+    width="566"
+    height="208"
+    loading="lazy"
+  />
+  <h1 class="display-5 fw-bold">
+    Add your favourite technology for FREE today
+  </h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Add your favourite technology in front of thousands of people.
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="/submit-tech" class="btn btn-primary btn-dark btn-lg"
+        >Submit Technology</a
+      >
+    </div>
+  </div>
+</section>
